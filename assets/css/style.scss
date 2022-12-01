@@ -1,0 +1,23 @@
+---
+---
+
+/*
+  If the number of TAB files has changed, the following variable is required.
+  And it must be defined before `@import`.
+*/
+$tab-count: {{ site.tabs | size | plus: 1 }}; // plus 1 for home tab
+
+@import "{{ site.theme }}";
+
+/* append your custom style below */
+
+#topbar {
+  z-index: 150 !important;
+  left: env(titlebar-area-x, 0) !important;
+  top: env(titlebar-area-y, 0) !important;
+  -webkit-app-region: drag;
+}
+
+input {
+  -webkit-app-region: no-drag;
+}
