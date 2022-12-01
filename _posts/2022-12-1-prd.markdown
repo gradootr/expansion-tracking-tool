@@ -1,0 +1,70 @@
+---
+title: Product Requirements v1.0
+categories: [General]
+tags: [prd]
+pin: true
+---
+
+# 1. **Problem**
+
+Gradoo kurduğu topluluk odaklı model ile oldukça hızlı büyüyen bir yapıya sahip ve mevcut sahip olduğu sistemde veri yoğunluğu arttıkça veriler işlenmesi ve efektif bir şekilde doğrulanması zorlaşıyor. Verilerin doğrulanıp işlenememesi de kaynakların doğru kanallara yönlendirilememesine sebep oluyor.
+
+# 2. **Çözüm**
+
+Gradoo ekibinin hâlihazırda spreadsheets üzerinden takibini sağladığı veritabanına alternatif olarak görselliği ekibin ihtiyaçları ve istekleri doğrultusunda dizayn edilmiş işlenebilir bir veritabanı yaratılması, yaratılan veritabanını ekipteki herkesin efektif bir şekilde kullanabilmesi için de kendi credential’ları ile bağlanabildikleri bir panel inşa edilmesi hedefleniyor.
+
+# 3. **Başarı Kriteri**
+
+Proje tamamlandığında Gradoo ekibi Typeform üzerinden hazırladıkları formlara gelen cevapları kendi istekleri doğrultusunda görüntüleyip işleyebilecek. Veriler doğrulandığından ve sade bir şekilde okunabildiğinden daha isabetli kararlar verilip kaynaklar doğru kanallara yönlendirilebilecek.
+
+# 4. **Objektifler**
+
+*TBD*
+
+# 5. **Sistem Yapı Gereksinimleri**
+
+## 5.1 **Prototip & PoC**
+
+---
+Typeform webhook'u kullanarak veri eşitleyip kendi querylerimiz ile veriyi işleme imkânı sunan bir backend ve buna ek query sonucunu tabloya & grafiğe render'layan PoC arayüzü.
+
+|Database|Framework|Graph Module|
+|:-:|:-:|:-:|
+|MongoDB|Express|chart.js
+
+**MongoDB**: JSON tabanlı hızlı prototipleme için kullanabileceğimiz bir veritabanı. Son üründe kullanmaya uygun fakat daha iyi seçenekler bulunuyor.
+
+**Express**: Hızlı prototipleme amacıyla seçtiğimiz JS framework'u. Son üründe kullanma şansımız oldukça düşük fakat tüm custom query'leri taşımamıza olanak tanıyor.
+
+**chart.js**: Chart renderlamak için kullandığımız minimal bir kütüphane.
+
+## 5.2 **Production**
+
+----
+**Alternatifler**
+
+|Database|Framework|Graph Module|
+|:-:|:-:|:-:|
+|MongoDB|React|d3
+|BigQuery|Express|nodePlotLib
+|CloudSQL||
+
+### 5.2.2 **Database**
+
+---
+#### 5.2.2.1 **MongoDB**
+- Objektifimize gayet uygun ve kendi managed hostingleri olan bir database alternatifi. Kendimiz hostlayabileceğimiz gibi kendi fiyatlandırmaları oldukça makul seviyede ve uzun süreçte kullanıma daha uygun.
+
+#### 5.2.2.1 **BigQuery**
+- Düşük olasılıkla da olsa BigQuery yine objektifimize uygun bir çözüm alternatifi. Kendi ara yüzümüz ile eş zamanlı olarak kullanmaya uygun olsa da fiyat araştırması yapılması gerek.
+
+- Son urun için diğer seçeneklere göre daha güçlü ve ileride diğer Google Cloud ürünleri ile birlikte kullanıma çok daha uygun olması nedeniyle daha iyi bir alternatif.
+
+### 5.2.1 **Framework**
+
+---
+#### 5.2.1.1 **React**
+- Sonrasında geliştirmeye açık olması ve tüm feature'ları ile ilk framework alternatifimiz oldukça popüler olan React. Ara yüz olarak kullanabileceğimiz gibi ileride eklemek istediğimiz feature'lar için de kullanabileceğimiz bir alternatif.
+
+#### 5.2.1.2 **Express + EJS**
+- Oldukça minimal bir framework olmasına rağmen EJS view engine ile ara yüz tasarımında son derece kullanışlı, hızlı prototiplemeye uygun bir framework.
