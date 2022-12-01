@@ -1,5 +1,5 @@
 
-remote-theme: cotes2020/jekyll-theme-chirpy
+theme: cotes2020/jekyll-theme-chirpy
 
 lang: en
 timezone: Europe/Rome
