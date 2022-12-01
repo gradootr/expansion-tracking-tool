@@ -15,8 +15,8 @@ description: >-                        # used by seo meta and the atom feed
   Gradoo expansion tool documentation.
 
 domain: gradootr.github.io       # if you want to force HTTPS, specify the domain without the http at the start, e.g. example.com
-url: https://gradootr.github.io  # the base hostname and protocol for your site, e.g. http://example.com
-baseurl: / 
+url: https://gradootr.github.io/expansion-tracking-tool  # the base hostname and protocol for your site, e.g. http://example.com
+baseurl: /expansion-tracking-tool
 
 github:
   username: gradootr             # change to your github username
