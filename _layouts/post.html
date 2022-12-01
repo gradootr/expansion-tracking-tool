@@ -40,44 +40,7 @@ tail_includes:
 
     </div>
   {% endif %}
-
-  <div class="d-flex justify-content-between">
-    <!-- author(s) -->
-    <span>
-      {% if page.author %}
-        {% assign authors = page.author %}
-      {% elsif page.authors %}
-        {% assign authors = page.authors %}
-      {% endif %}
-
-      {{ site.data.locales[site.lang].post.written_by }}
-
-      <em>
-      {% if authors %}
-        {% for author in authors %}
-          <a href="{{ site.data.authors[author].url }}">{{ site.data.authors[author].name }}</a>
-          {% unless forloop.last %}</em>, <em>{% endunless %}
-        {% endfor %}
-      {% else %}
-        <a href="{{ site.social.links[0] }}">{{ site.social.name }}</a>
-      {% endif %}
-      </em>
-    </span>
-
-    <div>
-      <!-- page views -->
-      {% if site.google_analytics.pv.proxy_endpoint or site.google_analytics.pv.cache_path %}
-      <span>
-        <em id="pv" class="pageviews">
-          <i class="fas fa-spinner fa-spin fa-fw"></i>
-        </em>
-        {{ site.data.locales[site.lang].post.pageview_measure }}
-      </span>
-      {% endif %}
-    </div>
-
-  </div> <!-- .d-flex -->
-
+  
 </div> <!-- .post-meta -->
 
 <div class="post-content">
