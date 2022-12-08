@@ -1,0 +1,59 @@
+---
+title: ETT Product Requirements v2
+categories: [Production]
+tags: [prd] [production]
+pin: false
+---
+
+# 1. **Problem**
+
+Gradoo kurduğu topluluk odaklı model ile oldukça hızlı büyüyen bir yapıya sahip ve mevcut sahip olduğu sistemde veri yoğunluğu arttıkça veriler işlenmesi ve efektif bir şekilde doğrulanması zorlaşıyor. Verilerin doğrulanıp işlenememesi de kaynakların doğru kanallara yönlendirilememesine sebep oluyor.
+
+# 2. **Çözüm**
+
+Gradoo ekibinin hâlihazırda spreadsheets üzerinden takibini sağladığı veritabanına alternatif olarak görselliği ekibin ihtiyaçları ve istekleri doğrultusunda dizayn edilmiş işlenebilir bir veritabanı yaratılması, yaratılan veritabanını ekipteki herkesin efektif bir şekilde kullanabilmesi için de kendi credential’ları ile bağlanabildikleri bir panel inşa edilmesi hedefleniyor.
+
+# 3. **Başarı Kriteri**
+
+Proje tamamlandığında Gradoo ekibi Typeform üzerinden hazırladıkları formlara gelen cevapları kendi istekleri doğrultusunda görüntüleyip işleyebilecek. Veriler doğrulandığından ve sade bir şekilde okunabildiğinden daha isabetli kararlar verilip kaynaklar doğru kanallara yönlendirilebilecek.
+
+# 4. **Objektifler**
+
+## 4.1 Özet Sayfası
+
+---
+- Tüm Gradoo projelerinin kümülatif verisinin çeşitli parametreler üzerinden (sınıf, öğrenci tipi, özgün başvuru) gösterildiği giriş sayfası.
+
+## 4.2 Arama Sayfası
+
+---
+- Ürünün temelini oluşturan, ekip üyelerinin kendi istekleri doğrultusunda *Proje*, *Şehir*, *Öğrenci Tipi*, *Okul* ve *Sınıf* filtrelemeleriyle arama yapabilecekleri, arama sonucunda özgün ve görselleştirilmiş veriye ulaşabilecekleri filtre sayfası.
+
+## 4.3 Proje Sayfaları
+
+---
+- Özet sayfasının projeler için özelleştirilmiş hali olan, seçili proje hakkında gerekli tüm veriye ulaşılabilecek proje sayfaları.
+
+# 5. **Sistem Yapı Gereksinimleri**
+
+## 5.1 **Demo Sonuçları**
+
+- Bir aylık demo geliştirmesi sonunda kullanılan teknoloji altyapısının Production yetersiz olduğu görüldü. Ürün için kritik olan birden fazla filtre seçimi ve okul filtresi Express.js framework'ünün sınırlarından dolayı efektif bir şekilde çalışmadığından **Next.js** framework'üne geçiş yapıldı.
+- NoSQL veritabanı olan MongoDB'den PostgreSQL veritabanı kullanan ve içerisinde birçok farklı kullanışlı özellik (Authentication, Unique'leştirme vb.) bulunan  **Supabase** geçişi yapıldı.
+- Efektif bir şekilde veri filtrelemesi yapılabilmesi için arama motorunun gerekliliğine karar verildi. Arama motoru olarak halihazırda geçiş yapılan PostgreSQL veritabanının sağladığı özelliklerden olan *Full Text Search* kullanılmaya başlandı.
+
+## 5.2 **Tech Stack**
+
+|Programming Language|Framework|Database|Graph Module|Hosting|
+|:-:|:-:|:-:|:-:|:-:|
+|TypeScript|Next.js|Supabase|Chart.js|Vercel
+
+### 5.2.1 **Database - Supabase**
+
+---
+- 
+
+### 5.2.2 **Framework - Next.js**
+
+---
+-

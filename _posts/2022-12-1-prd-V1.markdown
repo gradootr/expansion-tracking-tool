@@ -1,8 +1,8 @@
 ---
-title: Product Requirements v1.0
-categories: [General]
-tags: [prd]
-pin: true
+title: ETT Product Requirements v1
+categories: [Documents]
+tags: [prd] [documents]
+pin: false
 ---
 
 # 1. **Problem**
