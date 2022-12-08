@@ -2,7 +2,7 @@
 title: ETT Product Requirements v2
 categories: [Production]
 tags: [prd, production]
-pin: false
+pin: true
 ---
 
 # 1. **Problem**
