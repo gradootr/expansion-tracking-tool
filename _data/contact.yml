@@ -3,9 +3,3 @@
   icon: 'fab fa-github'
   noblank: true
   url: https://github.com/gradootr/expansion-tracking-tool
--
-  type: email
-  icon: 'fas fa-envelope'
-  noblank: true
-  url: gradootrtech@gmail.com
-
